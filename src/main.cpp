@@ -1,5 +1,8 @@
+#define NOMINMAX
+#include <windows.h>
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "GameObject.hpp"
 
 
 int main(int argc, char** argv)
