@@ -5,3 +5,5 @@ tower-defense.vcxproj
 tower-defense.vcxproj.filters
 tower-defense.vcxproj.user
 x64
+*.dll
+*.json
