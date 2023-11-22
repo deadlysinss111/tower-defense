@@ -12,6 +12,9 @@ class GameManager
 {
 public:
 	
+	GameManager();
+	~GameManager();
+
 	void setup();
 	bool collisionRectRect(sf::RectangleShape ARGrect1, sf::RectangleShape ARGrect2);
 	bool collisionCircleCircle(sf::CircleShape ARGcircle1, sf::CircleShape ARGcircle2);
@@ -24,6 +27,7 @@ public:
 
 private:
 	std::vector<GameObject*> listGameObject;
-	std::vector<Tile*> map;
 	std::vector<Wave*> listWave;
+	std::vector<std::vector<Tile*>> map;
+	std::vector<Tile*> path;
 };
