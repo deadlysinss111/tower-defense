@@ -20,6 +20,7 @@ public:
 	~Waves();
 	void StardWaves();
 	void EndWaves();
+	float pourcentWaveEnd(sf::vector<GameObject> nbEnnemies)
 
 
 };
