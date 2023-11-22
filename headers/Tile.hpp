@@ -3,11 +3,7 @@
 class GameObject;
 class PathLine;
 
-struct Content {
-	GameObject* object;
-	PathLine* path;
-	char* id;
-};
+
 
 class Tile {
 public:
@@ -15,7 +11,8 @@ public:
 	~Tile();
 
 	sf::Vector2f position;
-	Content* content;
+	GameObject* object;
+	PathLine* path;
 
 	void setContent(GameObject*);
 	void setContent(PathLine*);

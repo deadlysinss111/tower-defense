@@ -4,23 +4,19 @@
 #include <typeinfo>
 #include <iostream>
 
+
+
+
 Tile::Tile(GameObject* object){
 	this->setContent(object);
-	//this->getContent();
 }
 
 Tile::~Tile(){}
 
 void Tile::setContent(GameObject* content) {
-	this->content->object = content;
-	this->content->id = "object";
+	this->object = content;
 }
 
 void Tile::setContent(PathLine* content) {
-	this->content->path = content;
-	this->content->id = "path";
-}
-
-void Tile::getContent() {
-	this->content->
+	this->path = content;
 }

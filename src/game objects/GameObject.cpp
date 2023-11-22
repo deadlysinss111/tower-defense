@@ -21,6 +21,7 @@ GameObject::GameObject(sf::RenderWindow* window, int x, int y, float radius) {
 	this->x = x; this->y = y;
 	this->h = radius; this->w = radius;
 	this->window = window;
+	this->name = "'hahahahahah";
 }
 
 GameObject::GameObject() {};
