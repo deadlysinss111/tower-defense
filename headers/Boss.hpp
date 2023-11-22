@@ -4,7 +4,7 @@
 class Boss : public Ennemies
 {
 public:
-	Boss();
+	Boss(sf::RenderWindow* window, int x, int y, int r);
 
 	void ability();
 };
