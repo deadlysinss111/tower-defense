@@ -1,8 +1,8 @@
 #include "Ressource.hpp"
 
-Ressource::Ressource()
-{
-}
+//Ressource::Ressource()
+//{
+//}
 
 Ressource::Ressource(int value,sf::RenderWindow* window, int x, int y, float width, float height) : GameObject(window,x,y,width, height)
 {

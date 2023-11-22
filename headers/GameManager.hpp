@@ -1,12 +1,13 @@
 #pragma once
-#include "DynamicObject.hpp"
-#include "Tile.hpp"
-// #include "Wave.hpp"
 
 #include <vector>
 
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
+
+class Tile;
+class Wave;
+class GameObject;
 
 class GameManager
 {

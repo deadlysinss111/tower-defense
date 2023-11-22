@@ -3,9 +3,9 @@
 //#include <utility>
 //#include "Ennemy.hpp"
 
-Core::Core()
-{
-}
+//Core::Core()
+//{
+//}
 
 Core::Core(int hp, sf::RenderWindow* window, int x, int y, float width, float height): GameObject(window, x,y,width,height)
 {
@@ -30,7 +30,7 @@ bool Core::takeDamage()
 	//		return false;
 	//	}
 	//}
-	//return true;
+	return true;
 }
 
 void Core::decrementHp(int amount) {

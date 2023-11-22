@@ -1,4 +1,7 @@
 #include "GameManager.hpp"
+#include "Tile.hpp"
+#include "DynamicObject.hpp"
+#include "Waves.hpp"
 #include <iostream>
 
 // Constru & Destru
@@ -56,7 +59,7 @@ bool GameManager::detectWin()
 	float gameClearLevel = 0.f;
 	for (const auto it : this->listWave)
 	{
-		gameClearLevel += it->getClearLevel();
+		//gameClearLevel += it->getClearLevel();
 	}
 
 	if (gameClearLevel == 0.f)
@@ -72,6 +75,6 @@ bool GameManager::detectLoss()
 	//		if ((static_cast<Core*>(it))->getHealth() <= 0)
 	//			return true;
 	//		else
-	//			return false;
+				return false;
 	//}
 }
