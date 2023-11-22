@@ -29,7 +29,6 @@ public:
 	float y;
 	float h;
 	float w;
-	std::string name;
 
 protected:
 	sf::Shape* shape;
