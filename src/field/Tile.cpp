@@ -7,8 +7,11 @@
 
 
 
-Tile::Tile(GameObject* object){
+Tile::Tile(GameObject* object = NULL) {
 	this->setContent(object);
+}
+Tile::Tile() {
+
 }
 
 Tile::~Tile(){}

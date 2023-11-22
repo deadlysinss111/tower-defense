@@ -8,8 +8,8 @@ class PathLine;
 class Tile {
 public:
 	Tile(GameObject* object);
+	Tile();
 	~Tile();
-
 	sf::Vector2f position;
 	GameObject* object;
 	PathLine* path;
