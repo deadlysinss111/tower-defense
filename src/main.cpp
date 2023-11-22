@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "GameObject.hpp"
+//#include "GameObject.hpp"
 
 
 int main(int argc, char** argv)
@@ -22,4 +22,4 @@ int main(int argc, char** argv)
     }
 
     return 0;
-}
+}   

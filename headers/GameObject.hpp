@@ -35,3 +35,4 @@ protected:
 	sf::RenderWindow* window;
 	sf::Sprite sprite;
 };
+
