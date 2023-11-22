@@ -1,20 +1,22 @@
 #pragma once
 
 #include <SFML/System/Clock.hpp>
+#include 
 
 class Waves
 {
 
 private:
-	int nbEnnemies;
+	sf::vector<GameObject> nbEnnemies;
 	float timeUntilNext;
 	float clearLevelUntilNext;
 	sf::Clock clock;
+	float nbMaxEnnemies;
 
 public:
 
 	Waves();
-	Waves(int nbEnnemies);
+	Waves(sf::vector<GameObject> nbEnnemies);
 	~Waves();
 	void StardWaves();
 	void EndWaves();
