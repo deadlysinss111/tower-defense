@@ -18,8 +18,7 @@ public:
 	virtual void update(float deltaT, std::vector<GameObject*>* objectVector) {};
 	virtual void display(sf::RenderWindow* window);
 	/*void setTexture(sf::Texture*);*/
-
-	sf::Vector2f velocity;
+	virtual void move(sf::Vector2f vect, float deltaT) {};
 
 	static std::map<int, sf::Texture> textureMap;
 
