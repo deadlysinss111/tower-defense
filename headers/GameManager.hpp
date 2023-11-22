@@ -27,7 +27,7 @@ public:
 
 private:
 	std::vector<GameObject*> listGameObject;
-	// std::vector<Wave*> listWave;
+	std::vector<Wave*> listWave;
 	std::vector<std::vector<Tile*>> map;
 	std::vector<Tile*> path;
 };

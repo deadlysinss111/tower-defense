@@ -16,3 +16,9 @@ DynamicObject::~DynamicObject()
 {
 	std::cout << "DynamicObject was PURGED\n";
 }
+
+void DynamicObject::move(sf::Vector2f vect, float deltaT) {
+	this->x += vect.x * deltaT;
+	this->y += vect.y * deltaT;
+	this->shape->setPosition(x, y);
+}

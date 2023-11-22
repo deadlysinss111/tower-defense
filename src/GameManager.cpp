@@ -6,7 +6,7 @@ GameManager::GameManager()
 {
 	this->listGameObject = {};
 	this->map = {};
-	// this->listWave = {};
+	this->listWave = {};
 	this->path = {};
 }
 GameManager::~GameManager()
@@ -53,16 +53,16 @@ void GameManager::setup()
 // Win & Loss conditions
 bool GameManager::detectWin()
 {
-	//float gameClearLevel = 0.f;
-	//for (const auto it : this->listWave)
-	//{
-	//	gameClearLevel += it->getClearLevel();
-	//}
+	float gameClearLevel = 0.f;
+	for (const auto it : this->listWave)
+	{
+		gameClearLevel += it->getClearLevel();
+	}
 
-	//if (gameClearLevel == 0.f)
-	//	return true;
-	//else
-	//	return false;
+	if (gameClearLevel == 0.f)
+		return true;
+	else
+		return false;
 }
 bool GameManager::detectLoss()
 {
