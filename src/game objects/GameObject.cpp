@@ -23,7 +23,6 @@ GameObject::GameObject(sf::RenderWindow* window, int x, int y, float radius) {
 	this->window = window;
 }
 
-GameObject::GameObject() {};
 
 GameObject::~GameObject() {
 	delete this->shape;
