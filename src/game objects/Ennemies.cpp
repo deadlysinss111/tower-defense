@@ -1,6 +1,6 @@
 #include "Ennemies.hpp"
 
-Ennemies::Ennemies(int health, int attack, float speed, int goldValue)
+Ennemies::Ennemies(sf::RenderWindow* window, int x, int y, int radius, int health, int attack, int speed, int goldValue) : DynamicObject( window, x, y, radius, speed)
 {
 	this->health = health;
 	this->attack = attack;
@@ -46,4 +46,15 @@ void Ennemies::setSpeed(float newSpeed)
 void Ennemies::setGoldValue(int newGoldValue)
 {
 	this->goldValue = newGoldValue;
+}
+
+void Ennemies::takeDamage(int damageTake)
+{
+
+	setHealth(this->getHealth() - damageTake);
+	
+	if (this->getHealth() <=  0) {
+		this->dead = true;
+	}
+
 }

@@ -1,16 +1,17 @@
 #pragma once
+#include "dynamicObject.hpp"
 
-class Ennemies
+class Ennemies : public DynamicObject
 {
 private:
 	int health;
 	int attack;
-	float speed;
+	int speed;
 	int goldValue;
 
 public:
 
-	Ennemies(int health, int attack, float speed, int goldValue);
+	Ennemies(sf::RenderWindow* window, int x, int y, int radius, int health, int attack, int speed, int goldValue);
 
 	int getHealth();
 	int getAttack();
@@ -22,6 +23,6 @@ public:
 	void setSpeed(float speed);
 	void setGoldValue(int goldValue);
 
-
+	void takeDamage(int damageTake);
 };
 

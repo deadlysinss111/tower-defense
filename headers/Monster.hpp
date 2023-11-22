@@ -11,7 +11,7 @@ namespace std
 		static map<string, vector<int>> MonsterChoice;
 
 	public:
-		Monster(string type);
+		Monster(sf::RenderWindow* window, int x, int y, int r, string type);
 
 		string getType();
 

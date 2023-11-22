@@ -7,7 +7,7 @@ namespace std
 {
 	map<string, vector<int>> Monster::MonsterChoice = { {"soldier", { 75, 8, 3, 3 }},{"tanker", { 100, 10, 2, 5 }} };
 
-	Monster::Monster(string type) : Ennemies::Ennemies(0, 0, 0, 0)
+	Monster::Monster(sf::RenderWindow* window, int x, int y, int r, string type) : Ennemies::Ennemies(window, x, y, r, 0, 0, 0, 0)
 	{
 		this->type = type;
 
