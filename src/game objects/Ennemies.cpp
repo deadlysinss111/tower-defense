@@ -1,6 +1,6 @@
 #include "Ennemies.hpp"
 
-Ennemies::Ennemies(sf::RenderWindow* window, int x, int y, int radius, int health, int attack, int speed, int goldValue) : DynamicObject(window, x, y, radius, (0, 0))
+Ennemies::Ennemies(sf::RenderWindow* window, int x, int y, int radius, int health, int attack, sf::Vector2f* speed, int goldValue) : DynamicObject(window, x, y, radius, speed)
 {
 	this->health = health;
 	this->attack = attack;

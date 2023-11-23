@@ -11,7 +11,7 @@ private:
 
 public:
 
-	Ennemies(sf::RenderWindow* window, int x, int y, int radius, int health, int attack, int speed, int goldValue);
+	Ennemies(sf::RenderWindow* window, int x, int y, int radius, int health, int attack, sf::Vector2f* speed, int goldValue);
 
 	int getHealth();
 	int getAttack();
