@@ -3,43 +3,39 @@
 #include <vector>
 #include <iostream>
 
-namespace std
+std::map<std::string, std::vector<int>> Monster::MonsterChoice = { {"soldier", { 75, 8, 3, 3 }},{"tanker", { 100, 10, 2, 5 }} };
+
+Monster::Monster(int x, int y, int r, std::string type) : Ennemies::Ennemies(window, x, y, r, 0, 0, 0, 0)
 {
-	map<string, vector<int>> Monster::MonsterChoice = { {"soldier", { 75, 8, 3, 3, 3 }},{"tanker", { 100, 10, 2, 2, 5 }} };
+	this->type = type;
+	this->shape->setFillColor(sf::Color::Cyan);
 
-	Monster::Monster(sf::RenderWindow* window, int x, int y, int r, string type) : Ennemies::Ennemies(window, x, y, r, 0, 0, &sf::Vector2f(0, 0), 0)
-	{
-		this->type = type;
-		this->shape->setFillColor(sf::Color::Cyan);
+	auto found = this->MonsterChoice.find(type);
 
-		auto found = this->MonsterChoice.find(type);
+	if (found != MonsterChoice.end()) {
 
-		if (found != MonsterChoice.end()) {
+		std::vector<int> values = found->second;
 
-			vector<int> values = found->second;
-
-			Ennemies::setHealth(values[0]);
-			Ennemies::setAttack(values[1]);
-			Ennemies::setSpeed(&sf::Vector2f(values[2], values[3]));
-			Ennemies::setGoldValue(values[4]);
-		}
-		else {
-			cerr << "Erreur : Type de monstre inconnu" << endl;
-		}
+		Ennemies::setHealth(values[0]);
+		Ennemies::setAttack(values[1]);
+		Ennemies::setSpeed(values[2]);
+		Ennemies::setGoldValue(values[3]);
 	}
-
-	string Monster::getType()
-	{
-		return this->type;
+	else {
+		std::cerr << "Erreur : Type de monstre inconnu" << std::endl;
 	}
-
-	void Monster::setType(string type)
-	{
-		this->type = type;
-	}
-
 }
 
-void std::Monster::update(float deltaT, std::vector<GameObject*>* objectVector) {
+std::string Monster::getType()
+{
+	return this->type;
+}
+
+void Monster::setType(std::string type)
+{
+	this->type = type;
+}
+
+void Monster::update(float deltaT, std::vector<GameObject*>* objectVector) {
 	//this->move(&(sf::Vector2f(10, 10)), 0.05);
 }
