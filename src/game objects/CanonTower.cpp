@@ -36,8 +36,8 @@ void CanonTower::Range(const sf::FloatRect& objectBounds)
     detectionZone.setPosition(shape->getPosition());
 
     // Ajuster la taille de la zone de détection en fonction de la portée de la tour
-    detectionZone.setSize(sf::Vector2f(_r * 1.5, _r * 1.5));
-    detectionZone.setOrigin(sf::Vector2f(detectionZone.getSize().x / 1.5, detectionZone.getSize().y / 1.5));
+    detectionZone.setSize(sf::Vector2f(rg, rg));
+    detectionZone.setOrigin(sf::Vector2f(detectionZone.getSize().x / 2, detectionZone.getSize().y / 2));
 
     // Vérifier si les limites de l'objet entrent dans la zone de détection
     if (detectionZone.getGlobalBounds().intersects(objectBounds))

@@ -7,6 +7,7 @@ private:
 	atk = 25;
 	atks = 2;
 	Bus = 7;
+	rg = 350
 
 public:
 	ArcheryTower();

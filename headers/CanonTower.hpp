@@ -8,6 +8,7 @@ private:
 	atk = 75;
 	atks = 0.5;
 	Bus = 4;
+	rg = 505;
 
 public:
 

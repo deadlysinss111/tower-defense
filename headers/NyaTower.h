@@ -8,6 +8,7 @@ private:
 	atk = 200;
 	atks = 0.2;
 	Bus = 100;
+	rg = 1000;
 
 public:
 	NyaTower();
