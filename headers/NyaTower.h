@@ -1,7 +1,7 @@
 #pragma once
 #include "Tower.hpp"
 
-class NyaTower : public Tower 
+class NyaTower : public Tower
 {
 private:
 

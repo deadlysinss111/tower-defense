@@ -1,4 +1,4 @@
-#include "NyaTower.h"
+#include "NyaTower.hpp"
 
 NyaTower::NyaTower()
 {

@@ -1,11 +1,14 @@
 #pragma once
 #include "Tower.hpp"
+#include "Projectile.hpp"
 
 class CanonTower : public Tower
 {
 private:
 
 	sf::RectangleShape detectionZone;
+	std::vector<std::unique_ptr<Projectile>> projectiles;
+	sf::Vector2f targetPosition;
 
 public:
 
@@ -27,6 +30,8 @@ public:
 	void Lvl();
 	void UpgradeCost();
 	void move(float offsetX, float offsetY);
+
+	void update(float deltaT, std::vector<GameObject*>* objectVector);
 
 	void getUpgradeCost();
 	sf::RectangleShape& getShape() { return dynamic_cast<sf::RectangleShape&>(*shape); }
