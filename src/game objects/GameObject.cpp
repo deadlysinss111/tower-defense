@@ -1,5 +1,4 @@
-#define NOMINMAX
-#include <Windows.h>
+#include <iostream>
 #include "GameObject.hpp"
 
 static std::map<int, sf::Texture> textureMap;
@@ -23,7 +22,6 @@ GameObject::GameObject(sf::RenderWindow* window, int x, int y, float radius) {
 	this->window = window;
 }
 
-GameObject::GameObject() {};
 
 GameObject::~GameObject() {
 	delete this->shape;

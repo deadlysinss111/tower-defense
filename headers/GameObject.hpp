@@ -12,7 +12,6 @@ class GameObject {
 public:
 	GameObject(sf::RenderWindow* window, int x, int y, float width, float height);
 	GameObject(sf::RenderWindow* window, int x, int y, float radius);
-	GameObject();
 	~GameObject();
 
 	virtual void update(float deltaT, std::vector<GameObject*>* objectVector) {};
@@ -28,9 +27,9 @@ public:
 	float y;
 	float h;
 	float w;
-
-protected:
 	sf::Shape* shape;
+protected:
+	
 	sf::RenderWindow* window;
 	sf::Sprite sprite;
 };

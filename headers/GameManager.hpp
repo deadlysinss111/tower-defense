@@ -1,18 +1,20 @@
 #pragma once
-#include "DynamicObject.hpp"
-#include "Tile.hpp"
-// #include "Wave.hpp"
 
 #include <vector>
 
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 
+class Tile;
+class Wave;
+class GameObject;
+class RenderManager;
+
 class GameManager
 {
 public:
 	
-	GameManager();
+	GameManager(sf::RenderWindow* window);
 	~GameManager();
 
 	void setup();
@@ -23,11 +25,14 @@ public:
 	bool detectWin();
 	bool detectLoss();
 
-	void display();
+	void manage(float deltaT);
 
-private:
 	std::vector<GameObject*> listGameObject;
+private:
+	
 	std::vector<Wave*> listWave;
 	std::vector<std::vector<Tile*>> map;
 	std::vector<Tile*> path;
+	sf::RenderWindow* window;
+	RenderManager* renderManager;
 };

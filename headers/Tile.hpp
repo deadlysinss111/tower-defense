@@ -1,7 +1,6 @@
 #include <SFML/System/Vector2.hpp>
 
 class GameObject;
-class PathLine;
 
 
 
@@ -12,9 +11,7 @@ public:
 	~Tile();
 	sf::Vector2f position;
 	GameObject* object;
-	PathLine* path;
 
 	void setContent(GameObject*);
-	void setContent(PathLine*);
 	void getContent();
 };

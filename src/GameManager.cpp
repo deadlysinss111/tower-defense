@@ -1,16 +1,27 @@
 #include "GameManager.hpp"
+#include "Tile.hpp"
+#include "DynamicObject.hpp"
+#include "Waves.hpp"
+#include "RenderManager.hpp"
+#include "Monster.hpp"
 #include <iostream>
 
 // Constru & Destru
-GameManager::GameManager()
+GameManager::GameManager(sf::RenderWindow* window)
 {
+	this->window = window;
 	this->listGameObject = {};
 	this->map = {};
 	this->listWave = {};
 	this->path = {};
+	this->renderManager = new RenderManager();
+
+	std::Monster* test = new std::Monster(this->window, 500, 500, 50, "soldier");
+	this->listGameObject.push_back(test);
 }
 GameManager::~GameManager()
 {
+	delete this->renderManager;
 	std::cout << "GameManager was PURGED\n";
 }
 
@@ -52,7 +63,7 @@ bool GameManager::detectWin()
 	float gameClearLevel = 0.f;
 	for (const auto it : this->listWave)
 	{
-		gameClearLevel += it->getClearLevel();
+		//gameClearLevel += it->getClearLevel();
 	}
 
 	if (gameClearLevel == 0.f)
@@ -68,6 +79,12 @@ bool GameManager::detectLoss()
 	//		if ((static_cast<Core*>(it))->getHealth() <= 0)
 	//			return true;
 	//		else
-	//			return false;
+				return false;
 	//}
+}
+void GameManager::manage(float deltaT){
+	for (int i = 0; i < this->listGameObject.size(); i++) {
+		this->listGameObject[i]->update(deltaT, &this->listGameObject);
+	}
+	this->renderManager->manage(this->window, &this->listGameObject);
 }
