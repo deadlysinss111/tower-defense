@@ -2,6 +2,7 @@
 
 Waves::Waves(std::vector<GameObject*> nbEnnemies)
 {
+	this->listEnnemies = nbEnnemies;
 	this->timeUntilNext = 60;
 	this->clearLevelUntilNext = 60;
 	this->nbMaxEnnemies = nbEnnemies.size();
@@ -25,9 +26,14 @@ void Waves::EndWaves()
 		clock.restart();
 		StardWaves();
 	}
+	else if (this->getClearLevel() == 0)
+	{
+		clock.restart();
+		StardWaves();
+	}
 }
 
-float Waves::pourcentWaveEnd(std::vector<GameObject*> nbEnnemies)
+float Waves::getClearLevel(std::vector<GameObject*> nbEnnemies)
 {
 	float _nbEnnemies = static_cast<float>(nbEnnemies.size());
 	float pourcentKill = _nbEnnemies / nbMaxEnnemies;

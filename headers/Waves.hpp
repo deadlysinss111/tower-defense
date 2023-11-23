@@ -12,6 +12,7 @@ private:
 	float timeUntilNext;
 	float clearLevelUntilNext;
 	sf::Clock clock;
+	std::vector<GameObject*> listEnnemies;
 	float nbMaxEnnemies;
 
 public:
@@ -19,6 +20,8 @@ public:
 	~Waves();
 	void StardWaves();
 	void EndWaves();
-	float pourcentWaveEnd(std::vector<GameObject*> nbEnnemies);
+	float getClearLevel(std::vector<GameObject*> nbEnnemies);
+
+	float
 };
 

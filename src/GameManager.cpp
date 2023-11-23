@@ -42,10 +42,6 @@ void GameManager::setup()
 
 
 	// Fills the listWave with waves
-	for (int w = 0; w < 3; w++)
-	{
-
-	}
 
 	// Creates the Core and 2-3 ressources
 }
