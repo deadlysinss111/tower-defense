@@ -13,14 +13,15 @@ GameObject::GameObject(sf::RenderWindow* window, int x, int y, float width, floa
 	this->window = window;
 }
 
-
 GameObject::GameObject(sf::RenderWindow* window, int x, int y, float radius) {
 	this->shape = new sf::CircleShape(radius);
-	this->shape->setOrigin(sf::Vector2f(w / 2, h / 2));
 	this->x = x; this->y = y;
-	this->h = radius; this->w = radius;
+	this->w = radius; this->h = radius;
+	this->shape->setOrigin(sf::Vector2f(w / 2, h / 2));
+	this->shape->setPosition(sf::Vector2f(this->x, this->y));
 	this->window = window;
 }
+
 
 
 GameObject::~GameObject() {
@@ -30,8 +31,3 @@ GameObject::~GameObject() {
 void GameObject::display(sf::RenderWindow* window) {
 	window->draw(*this->shape);
 }
-
-
-//void GameObject::setTexture(sf::Texture* texture) {
-//	this->sprite.setTexture(*texture);
-//}
