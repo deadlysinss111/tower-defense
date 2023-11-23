@@ -10,6 +10,7 @@ namespace std
 	Monster::Monster(sf::RenderWindow* window, int x, int y, int r, string type) : Ennemies::Ennemies(window, x, y, r, 0, 0, 0, 0)
 	{
 		this->type = type;
+		this->shape->setFillColor(sf::Color::Cyan);
 
 		auto found = this->MonsterChoice.find(type);
 
@@ -39,3 +40,6 @@ namespace std
 
 }
 
+void std::Monster::update(float deltaT, std::vector<GameObject*>* objectVector) {
+	//this->move(&(sf::Vector2f(10, 10)), 0.05);
+}

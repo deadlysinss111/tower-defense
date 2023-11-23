@@ -27,9 +27,9 @@ public:
 	float y;
 	float h;
 	float w;
-
-protected:
 	sf::Shape* shape;
+protected:
+	
 	sf::RenderWindow* window;
 	sf::Sprite sprite;
 };

@@ -1,5 +1,4 @@
-#define NOMINMAX
-#include <Windows.h>
+#include <iostream>
 #include "GameObject.hpp"
 
 static std::map<int, sf::Texture> textureMap;
