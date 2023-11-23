@@ -13,7 +13,10 @@ class RenderManager;
 class GameManager
 {
 public:
-	
+
+	// Singleton constructor filter
+	static void instance(sf::RenderWindow* window);
+
 	GameManager(sf::RenderWindow* window);
 	~GameManager();
 
@@ -29,6 +32,9 @@ public:
 
 	std::vector<GameObject*> listGameObject;
 private:
+
+	// Singleton security
+	static GameManager* instance_;
 	
 	std::vector<Wave*> listWave;
 	std::vector<std::vector<Tile*>> map;

@@ -6,6 +6,13 @@
 #include "Monster.hpp"
 #include <iostream>
 
+// Singleton constructor filter
+void GameManager::instance(sf::RenderWindow* window)
+{
+	if (instance_ == nullptr)
+		instance_ = new GameManager(window);
+}
+
 // Constru & Destru
 GameManager::GameManager(sf::RenderWindow* window)
 {
@@ -15,9 +22,6 @@ GameManager::GameManager(sf::RenderWindow* window)
 	this->listWave = {};
 	this->path = {};
 	this->renderManager = new RenderManager();
-
-	std::Monster* test = new std::Monster(this->window, 500, 500, 50, "soldier");
-	this->listGameObject.push_back(test);
 }
 GameManager::~GameManager()
 {
@@ -34,8 +38,8 @@ void GameManager::setup()
 		std::vector<Tile*> tempVec;
 		for (int y = 0; y < 15; y++)
 		{
-			Tile* tile = new Tile();
-			tempVec.push_back(tile);
+			Tile tile;
+			tempVec.push_back(&tile);
 		}
 		this->map.push_back(tempVec);
 	}
@@ -53,6 +57,10 @@ void GameManager::setup()
 
 
 	// Fills the listWave with waves
+	//for (int m = 0; m < 5; m++)
+	//{
+	//	Monster monster(0, 0, 20, "solider");
+	//}
 
 	// Creates the Core and 2-3 ressources
 }

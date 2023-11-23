@@ -1,21 +1,20 @@
 #pragma once
 #include "Ennemies.hpp"
 #include <string>
+#include <vector>
 
-namespace std
-{
+
 	class Monster : public Ennemies
 	{
 	private:
-		string type;
-		static map<string, vector<int>> MonsterChoice;
+		std::string type;
+		static std::map<std::string, std::vector<int>> MonsterChoice;
 
 	public:
-		Monster(sf::RenderWindow* window, int x, int y, int r, string type);
+		Monster(int x, int y, int r, std::string type);
 		void update(float deltaT, std::vector<GameObject*>* objectVector);
 
-		string getType();
+		std::string getType();
 
-		void setType(string type);
+		void setType(std::string type);
 	};
-}
