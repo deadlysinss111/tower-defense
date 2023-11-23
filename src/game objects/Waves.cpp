@@ -33,9 +33,9 @@ void Waves::EndWaves()
 	}
 }
 
-float Waves::getClearLevel(std::vector<GameObject*> nbEnnemies)
+float Waves::getClearLevel()
 {
-	float _nbEnnemies = static_cast<float>(nbEnnemies.size());
+	float _nbEnnemies = static_cast<float>(this->listEnnemies.size());
 	float pourcentKill = _nbEnnemies / nbMaxEnnemies;
 	return pourcentKill;
 }

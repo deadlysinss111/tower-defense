@@ -20,8 +20,6 @@ public:
 	~Waves();
 	void StardWaves();
 	void EndWaves();
-	float getClearLevel(std::vector<GameObject*> nbEnnemies);
-
-	float
+	float getClearLevel();
 };
 
