@@ -1,10 +1,7 @@
 ﻿#include "Tower.hpp"
 
-Tower::Tower()
-{
-}
 
-Tower::Tower(sf::RenderWindow* window, int x, int y, float width, float height, sf::Color _color) :GameObject(window, x, y, width, height)
+Tower::Tower(sf::RenderWindow* window, int x, int y, float width, float height, sf::Color _color) : GameObject(window, x, y, width, height)
 {
 }
 

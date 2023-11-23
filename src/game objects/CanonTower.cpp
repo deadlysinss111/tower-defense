@@ -1,9 +1,6 @@
 #include "CanonTower.hpp"
 #include <iostream>
 
-CanonTower::CanonTower()
-{
-}
 
 CanonTower::CanonTower(sf::RenderWindow* window, int x, int y, int width, int height, sf::Color _color) : Tower(window, x, y, width, height, _color)
 {
@@ -53,8 +50,7 @@ void CanonTower::Range(const sf::FloatRect& objectBounds)
 // Dans CanonTower.cpp
 void CanonTower::FireRate()
 {
-    std::cout << "non";
-    Projectile projt(window, detectionZone.getSize().x, detectionZone.getSize().y, 50, sf::Vector2f(2, 2), 25, 25, sf::Color::Red);
+    Projectile projt(window, detectionZone.getSize().x, detectionZone.getSize().y, &sf::Vector2f(2, 2), 25, sf::Color::Red);
     projt.display(window);
 }
 

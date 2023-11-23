@@ -1,10 +1,10 @@
 ﻿#pragma once
-#include "GameObject.h"
+#include "GameObject.hpp"
 #include "projectile.hpp"
 
 class Tower : public GameObject
 {
-private:
+protected:
 
 	int atk;//damage
 	float rg;//range

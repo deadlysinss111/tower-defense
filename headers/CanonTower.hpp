@@ -5,10 +5,10 @@ class CanonTower : public Tower
 {
 private:
 
-	atk = 75;
-	atks = 0.5;
-	Bus = 4;
-	rg = 505;
+	int atk = 75;
+	float atks = 0.5;
+	int Bus = 4;
+	int rg = 505;
 
 public:
 

@@ -1,8 +1,5 @@
 #include "NyaTower.hpp"
 
-NyaTower::NyaTower()
-{
-}
 
 NyaTower::NyaTower(sf::RenderWindow* window, int x, int y, int width, int height, sf::Color _color) : Tower(window, x, y, width, height, _color)
 {
@@ -12,7 +9,7 @@ NyaTower::NyaTower(sf::RenderWindow* window, int x, int y, int width, int height
 
 }
 
-NyaTower::NyaTower(sf::RenderWindow* window, int x, int y, float radius, sf::Color _color) : Tower(window, x, y, radius, _color)
+NyaTower::NyaTower(sf::RenderWindow* window, int x, int y, int radius, sf::Color _color) : Tower(window, x, y, radius, _color)
 {
     shape->setFillColor(_color);
 }
@@ -51,8 +48,7 @@ void NyaTower::Range(const sf::FloatRect& objectBounds)
 
 void NyaTower::FireRate()
 {
-    std::cout << "non";
-    Projectile projt(window, detectionZone.getSize().x, detectionZone.getSize().y, 50, sf::Vector2f(2, 2), 1, 1, sf::Color::Red);
+    Projectile projt(window, detectionZone.getSize().x, detectionZone.getSize().y, &sf::Vector2f(2, 2), 1, sf::Color::Red);
     projt.display(window);
 }
 

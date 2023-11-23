@@ -15,9 +15,9 @@ DynamicObject::~DynamicObject()
 	std::cout << "DynamicObject was PURGED\n";
 }
 
-void DynamicObject::setSpeed(float x, float y) {
-	this->speed.x = x;
-	this->speed.y = y;
+void DynamicObject::setSpeed(sf::Vector2f* vect) {
+	this->speed.x = vect->x;
+	this->speed.y = vect->y;
 }
 
 void DynamicObject::update(float deltaT) {

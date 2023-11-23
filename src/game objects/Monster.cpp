@@ -5,9 +5,9 @@
 
 namespace std
 {
-	map<string, vector<int>> Monster::MonsterChoice = { {"soldier", { 75, 8, 3, 3 }},{"tanker", { 100, 10, 2, 5 }} };
+	map<string, vector<int>> Monster::MonsterChoice = { {"soldier", { 75, 8, 3, 3, 3 }},{"tanker", { 100, 10, 2, 2, 5 }} };
 
-	Monster::Monster(sf::RenderWindow* window, int x, int y, int r, string type) : Ennemies::Ennemies(window, x, y, r, 0, 0, 0, 0)
+	Monster::Monster(sf::RenderWindow* window, int x, int y, int r, string type) : Ennemies::Ennemies(window, x, y, r, 0, 0, &sf::Vector2f(0, 0), 0)
 	{
 		this->type = type;
 		this->shape->setFillColor(sf::Color::Cyan);
@@ -20,8 +20,8 @@ namespace std
 
 			Ennemies::setHealth(values[0]);
 			Ennemies::setAttack(values[1]);
-			Ennemies::setSpeed(values[2]);
-			Ennemies::setGoldValue(values[3]);
+			Ennemies::setSpeed(&sf::Vector2f(values[2], values[3]));
+			Ennemies::setGoldValue(values[4]);
 		}
 		else {
 			cerr << "Erreur : Type de monstre inconnu" << endl;

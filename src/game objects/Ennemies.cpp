@@ -4,7 +4,7 @@ Ennemies::Ennemies(sf::RenderWindow* window, int x, int y, int radius, int healt
 {
 	this->health = health;
 	this->attack = attack;
-	this->speed = speed;
+	this->speed = *speed;
 	this->goldValue = goldValue;
 }
 
@@ -18,10 +18,6 @@ int Ennemies::getAttack()
 	return this->attack;
 }
 
-float Ennemies::getSpeed()
-{
-	return this->speed;
-}
 
 int Ennemies::getGoldValue()
 {
@@ -38,10 +34,6 @@ void Ennemies::setAttack(int newAttack)
 	this->attack = newAttack;
 }
 
-void Ennemies::setSpeed(float newSpeed)
-{
-	this->speed = newSpeed;
-}
 
 void Ennemies::setGoldValue(int newGoldValue)
 {

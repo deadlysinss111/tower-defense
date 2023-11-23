@@ -1,8 +1,5 @@
 #include "ArcheryTower.hpp"
 
-ArcheryTower::ArcheryTower()
-{
-}
 
 ArcheryTower::ArcheryTower(sf::RenderWindow* window, int x, int y, int width, int height, sf::Color _color) : Tower(window, x, y, width, height, _color)
 {
@@ -12,7 +9,7 @@ ArcheryTower::ArcheryTower(sf::RenderWindow* window, int x, int y, int width, in
 
 }
 
-ArcheryTower::ArcheryTower(sf::RenderWindow* window, int x, int y, float radius, sf::Color _color) : Tower(window, x, y, radius, _color)
+ArcheryTower::ArcheryTower(sf::RenderWindow* window, int x, int y, int radius, sf::Color _color) : Tower(window, x, y, radius, _color)
 {
     shape->setFillColor(_color);
 }
@@ -29,7 +26,7 @@ void ArcheryTower::draw(sf::RenderWindow& window)
     window.draw(detectionZone);
 }
 
-void ArcheryTower::Range(const sf::FloatRect& objectBounds)
+void ArcheryTower::Range(const sf::FloatRect& objectBounds){
     // Mettre à jour la position de la zone de détection pour qu'elle suive la tour
     detectionZone.setPosition(shape->getPosition());
 
@@ -50,8 +47,7 @@ void ArcheryTower::Range(const sf::FloatRect& objectBounds)
 
 void ArcheryTower::FireRate()
 {
-    std::cout << "non";
-    Projectile projt(window, detectionZone.getSize().x, detectionZone.getSize().y, 50, sf::Vector2f(2, 2), 25, 25, sf::Color::Red);
+    Projectile projt(window, detectionZone.getSize().x, detectionZone.getSize().y, &sf::Vector2f(2, 2), 25, sf::Color::Red);
     projt.display(window);
 }
 

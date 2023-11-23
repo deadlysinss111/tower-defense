@@ -10,7 +10,7 @@ public:
 	DynamicObject(sf::RenderWindow* window, int x, int y, float radius, sf::Vector2f* speed);
 	~DynamicObject();
 	
-	void setSpeed(float x, float y);
+	void setSpeed(sf::Vector2f*);
 	void update(float deltaT);
 
 protected:
