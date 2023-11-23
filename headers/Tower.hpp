@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "GameObject.h"
+#include "projectile.hpp"
 
 class Tower : public GameObject
 {
@@ -9,7 +10,11 @@ private:
 	float rg;//range
 	float atks;//attack speed
 	float Bus;//Buillet speed 
-	int PC;//Build cost
+	int PC = 70;//Build cost
+
+	sf::RectangleShape detectionZone;
+	std::vector<std::unique_ptr<Projectile>> projectiles;
+	sf::Vector2f targetPosition;
 
 public:
 

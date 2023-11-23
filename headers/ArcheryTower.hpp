@@ -4,6 +4,9 @@
 class ArcheryTower : public Tower
 {
 private:
+	atk = 25;
+	atks = 2;
+	Bus = 7;
 
 public:
 	ArcheryTower();

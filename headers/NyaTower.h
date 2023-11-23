@@ -5,6 +5,10 @@ class NyaTower : public Tower
 {
 private:
 
+	atk = 200;
+	atks = 0.2;
+	Bus = 100;
+
 public:
 	NyaTower();
 	NyaTower(sf::RenderWindow* window, int x, int y, float width, float height, sf::Color _color);

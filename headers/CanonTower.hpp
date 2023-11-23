@@ -1,14 +1,13 @@
 #pragma once
 #include "Tower.hpp"
-#include "Projectile.hpp"
 
 class CanonTower : public Tower
 {
 private:
 
-	sf::RectangleShape detectionZone;
-	std::vector<std::unique_ptr<Projectile>> projectiles;
-	sf::Vector2f targetPosition;
+	atk = 75;
+	atks = 0.5;
+	Bus = 4;
 
 public:
 
