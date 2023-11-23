@@ -3,8 +3,8 @@
 #include <vector>
 #include <iostream>
 
-namespace std
-{
+using namespace std;
+
 	map<string, vector<int>> Monster::MonsterChoice = { {"soldier", { 75, 8, 3, 3 }},{"tanker", { 100, 10, 2, 5 }} };
 
 	Monster::Monster(sf::RenderWindow* window, int x, int y, int r, string type) : Ennemies::Ennemies(window, x, y, r, 0, 0, 0, 0)
@@ -37,5 +37,5 @@ namespace std
 		this->type = type;
 	}
 
-}
+
 
