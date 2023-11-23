@@ -1,4 +1,5 @@
 #include "Inventory.hpp"
+#include "Ressource.hpp"
 
 Inventory::Inventory()
 {
@@ -13,7 +14,7 @@ Inventory::~Inventory()
 
 void Inventory::addWood()
 {
-	wood = wood + ressource.getRessourceValue();
+	wood = wood + ressource->getRessourceValue();
 }
 
 void Inventory::addGold()

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Ressource.hpp"
+class Ressource;
 
 class Inventory
 {
@@ -9,7 +9,7 @@ private:
 	int gold;
 	int wood;
 
-	Ressource ressource;
+	Ressource* ressource;
 
 public:
 	
