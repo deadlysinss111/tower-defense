@@ -6,11 +6,16 @@
 #include "Monster.hpp"
 #include <iostream>
 
+GameManager* GameManager::instance_ = nullptr;
+
 // Singleton constructor filter
-void GameManager::instance(sf::RenderWindow* window)
+GameManager* GameManager::instance(sf::RenderWindow* window)
 {
 	if (instance_ == nullptr)
+	{
 		instance_ = new GameManager(window);
+	}
+	return instance_;
 }
 
 // Constru & Destru

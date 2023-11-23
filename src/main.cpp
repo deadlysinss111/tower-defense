@@ -11,7 +11,7 @@ int main(int argc, char** argv)
     //sf::RenderWindow window(sf::VideoMode(500, 500), "SFML");
     sf::Clock clock;
 
-    GameManager gameManager(&window);
+    GameManager* gameManager = GameManager::instance(&window);
 
     GameObject testGameObj(&window, 0, 0, 20, 20);
     //int speed[2] = { 1, 1 };
@@ -25,9 +25,7 @@ int main(int argc, char** argv)
 
         window.clear();
 
-        gameManager.manage(elapsed.asSeconds());
-
-        window.draw(*gameManager.listGameObject[0]->shape);
+        gameManager->manage(elapsed.asSeconds());
 
         window.display();
     }
