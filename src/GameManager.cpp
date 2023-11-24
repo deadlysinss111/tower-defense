@@ -4,7 +4,11 @@
 #include "Waves.hpp"
 #include "RenderManager.hpp"
 #include "Monster.hpp"
+#include "InputManager.hpp"
+#include "ArcheryTower.hpp"
+#include "Core.hpp"
 #include <iostream>
+#include <Ressource.hpp>
 
 GameManager* GameManager::instance_ = nullptr;
 
@@ -68,6 +72,15 @@ void GameManager::setup()
 	//}
 
 	// Creates the Core and 2-3 ressources
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//Cores 
+	//if games is completet the creation of the cores is in level function
+
+	Core cores(100, window, 8, 13, 10, 10); //8 13 fin du path
+	cores.display(window);
+
+	//Ressources 
+
 }
 
 // Win & Loss conditions
@@ -96,8 +109,63 @@ bool GameManager::detectLoss()
 	//}
 }
 void GameManager::manage(float deltaT){
-	for (int i = 0; i < this->listGameObject.size(); i++) {
-		this->listGameObject[i]->update(deltaT, &this->listGameObject);
+	for (int i = 0; i < this->listGameObject.at(0)->size(); i++) {
+
+			this->listGameObject.at(0)->at(i)->update(deltaT, this->listGameObject);
 	}
 	this->renderManager->manage(this->window, &this->listGameObject);
+}
+void GameManager::Mapping() {
+	InputManager inputManager(window);
+
+	inputManager.keyMapping(sf::Keyboard::C, []() {
+		std::cout << "Touche C presse !" << std::endl;
+		void(*FArcheryTower);
+		});
+
+	inputManager.keyMapping(sf::Keyboard::A, []() {
+		std::cout << "Touche A presse !" << std::endl;
+		void(*FCanonTower);
+		});
+
+	inputManager.keyMapping(sf::Keyboard::N, []() {
+		std::cout << "Touche N presse !" << std::endl;
+		void(*FNyaTower);
+		});
+}
+void GameManager::FArcheryTower()
+{
+	sf::Vector2i mousePosition = sf::Mouse::getPosition();
+	ArcheryTower archeryTower(window, mousePosition.x/10, mousePosition.y/10, 10, 10, sf::Color::Red);
+	archeryTower.draw(*window);
+}
+void GameManager::FCanonTower()
+{
+	sf::Vector2i mousePosition = sf::Mouse::getPosition();
+	ArcheryTower archeryTower(window, mousePosition.x / 10, mousePosition.y / 10, 10, 10, sf::Color::Red); // 10 taille peut être d'une tile
+	archeryTower.draw(*window);
+}
+void GameManager::FNyaTower()
+{
+	sf::Vector2i mousePosition = sf::Mouse::getPosition();
+	ArcheryTower archeryTower(window, mousePosition.x / 10, mousePosition.y / 10, 10, 10, sf::Color::Red);
+	archeryTower.draw(*window);
+}
+bool GameManager::isonPath(int x, int y)
+{
+	// Vérifier si la position (x, y) est sur le chemin
+	for (const auto& tile : this->path)
+	{
+		/*if (tile->getX() == x && tile->getY() == y)
+		{
+			return true;
+		}*/
+	}
+	return false;
+}
+void GameManager::ajouterRessource(int x, int y)
+{
+	// Ajouter la ressource à la position (x, y)
+	Ressource* ressource = new Ressource(1, window, x, y, 10,10); // Assurez-vous d'avoir une classe Ressource avec le constructeur correspondant
+	listRessource.push_back(*ressource);
 }

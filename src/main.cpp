@@ -25,7 +25,8 @@ int main(int argc, char** argv)
 
         window.clear();
 
-        gameManager->manage(elapsed.asSeconds());
+       gameManager->manage(elapsed.asSeconds());
+       gameManager->Mapping();
 
         window.display();
     }

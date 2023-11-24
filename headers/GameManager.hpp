@@ -9,6 +9,7 @@ class Tile;
 class Wave;
 class GameObject;
 class RenderManager;
+class Ressource;
 
 class GameManager
 {
@@ -30,7 +31,21 @@ public:
 
 	void manage(float deltaT);
 
-	std::vector<GameObject*> listGameObject;
+	void Mapping();
+
+	void FArcheryTower();
+
+	void FCanonTower();
+
+	void FNyaTower();
+
+	bool isonPath(int x, int y);
+
+	void ajouterRessource(int x, int y);
+
+
+	std::vector<std::vector<GameObject*>*> listGameObject;
+	std::vector<Ressource> listRessource;
 
 	static GameManager* instance_;
 private:
