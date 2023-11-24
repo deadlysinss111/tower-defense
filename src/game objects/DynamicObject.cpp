@@ -1,34 +1,24 @@
 #include "DynamicObject.hpp"
+#include <iostream>
 
-
-DynamicObject::DynamicObject(sf::RenderWindow* window, int x, int y, float width, float height, int speed)
+// Constructors & Destructor
+DynamicObject::DynamicObject(sf::RenderWindow* window, int x, int y, float width, float height, int speed[2]) : GameObject(window, x, y, width, height)
 {
+	/*this->speed[0] = speed[0];
+	this->speed[1] = speed[1];*/
 }
-
-DynamicObject::DynamicObject(sf::RenderWindow* window, int x, int y, float radius, int speed)
+DynamicObject::DynamicObject(sf::RenderWindow* window, int x, int y, float radius, int speed[2]) : GameObject(window, x, y, radius)
 {
+	/*this->speed[0] = speed[0];
+	this->speed[1] = speed[1];*/
 }
-
 DynamicObject::~DynamicObject()
 {
+	std::cout << "DynamicObject was PURGED\n";
 }
 
-std::array<int, 2> DynamicObject::move()
-{
-	return std::array<int, 2>();
-}
-
-bool DynamicObject::collisionsCircleCircle(sf::CircleShape* circleA, sf::CircleShape* circleB, std::array<int, 2> posCircleA, std::array<int, 2> posCircleB)
-{
-	return false;
-}
-
-bool DynamicObject::collisionsRectRect(sf::RectangleShape* rectA, sf::RectangleShape* rectB, std::array<int, 2> posRectA, std::array<int, 2> posRectB)
-{
-	return false;
-}
-
-bool DynamicObject::collisionsCirlceRect(sf::CircleShape* circle, sf::RectangleShape* rect, std::array<int, 2> posCircle, std::array<int, 2> posRect)
-{
-	return false;
+void DynamicObject::move(sf::Vector2f* vect, float deltaT) {
+	this->x += vect->x * deltaT;
+	this->y += vect->y * deltaT;
+	this->shape->setPosition(x, y);
 }

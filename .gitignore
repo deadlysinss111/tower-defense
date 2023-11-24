@@ -1,8 +1,9 @@
 SFML-2.5.1
 .vs/
-tower-defense.sln
-tower-defense.vcxproj
-tower-defense.vcxproj.filters
-tower-defense.vcxproj.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 x64
 *.dll
+*.json

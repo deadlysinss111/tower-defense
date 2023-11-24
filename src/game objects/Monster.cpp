@@ -39,3 +39,6 @@ void Monster::setType(string type)
 
 
 
+void std::Monster::update(float deltaT, std::vector<GameObject*>* objectVector) {
+	//this->move(&(sf::Vector2f(10, 10)), 0.05);
+}

@@ -12,6 +12,7 @@ namespace std
 
 	public:
 		Monster(sf::RenderWindow* window, int x, int y, int r, string type);
+		void update(float deltaT, std::vector<GameObject*>* objectVector);
 
 		string getType();
 
