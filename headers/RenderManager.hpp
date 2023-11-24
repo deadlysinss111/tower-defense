@@ -6,11 +6,13 @@ namespace sf {
 	class RenderWindow;
 }
 class GameObject;
+class Tile;
 
 class RenderManager {
 public:
-	RenderManager();
+	RenderManager(sf::RenderWindow* window);
 	~RenderManager();
+	sf::RenderWindow* window;
 
-	void manage(sf::RenderWindow* window, std::vector<GameObject*>* objects);
+	void manage(std::vector<GameObject*>* objects, std::vector<std::vector<Tile*>>* map);
 };

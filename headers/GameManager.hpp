@@ -31,6 +31,7 @@ public:
 	void manage(float deltaT);
 
 	std::vector<GameObject*> listGameObject;
+	std::vector<std::vector<Tile*>> map;
 
 	static GameManager* instance_;
 private:
@@ -39,7 +40,6 @@ private:
 	
 	
 	std::vector<Wave*> listWave;
-	std::vector<std::vector<Tile*>> map;
 	std::vector<Tile*> path;
 	sf::RenderWindow* window;
 	RenderManager* renderManager;

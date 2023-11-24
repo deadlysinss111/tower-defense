@@ -13,7 +13,6 @@ int main(int argc, char** argv)
 
     GameManager* gameManager = GameManager::instance(&window);
 
-    GameObject testGameObj(&window, 0, 0, 20, 20);
     //int speed[2] = { 1, 1 };
     //DynamicObject testDynaObj(&window, 100, 100, 50, speed);
 

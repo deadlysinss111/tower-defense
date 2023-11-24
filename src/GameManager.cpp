@@ -26,7 +26,8 @@ GameManager::GameManager(sf::RenderWindow* window)
 	this->map = {};
 	this->listWave = {};
 	this->path = {};
-	this->renderManager = new RenderManager();
+	this->renderManager = new RenderManager(window);
+	this->setup();
 }
 GameManager::~GameManager()
 {
@@ -43,7 +44,7 @@ void GameManager::setup()
 		std::vector<Tile*> tempVec;
 		for (int y = 0; y < 15; y++)
 		{
-			Tile tile;
+			Tile tile(&sf::Vector2f(x, y), NULL);
 			tempVec.push_back(&tile);
 		}
 		this->map.push_back(tempVec);
@@ -54,10 +55,12 @@ void GameManager::setup()
 	for (int i = 0; i < 13; i++)
 	{
 		this->path.push_back(this->map[i][8]);
+		this->map[i][8]->path = false;
 	}
 	for (int i = 1; i < 6; i++)
 	{
 		this->path.push_back(this->map[13][8 + i]);
+		this->map[13][8 + i]->path = false;
 	}
 
 
@@ -99,5 +102,5 @@ void GameManager::manage(float deltaT){
 	for (int i = 0; i < this->listGameObject.size(); i++) {
 		this->listGameObject[i]->update(deltaT, &this->listGameObject);
 	}
-	this->renderManager->manage(this->window, &this->listGameObject);
+	this->renderManager->manage(&this->listGameObject, &this->map);
 }
